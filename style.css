@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Fredoka", sans-serif;
+  background-color: rgb(17, 27, 33);
+  color: rgb(233, 237, 239);
+  text-align: center;
+}
+
+header {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgb(32, 44, 51);
+}
+
+header > h1 {
+  color: rgb(233, 237, 239);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+select,
+input {
+  color: rgb(134, 148, 146);
+  background-color: rgb(32, 44, 51);
+  border-color: transparent;
+  border-radius: 4px;
+  outline: none;
+  height: 30px;
+  font-size: 1rem;
+  margin-top: 10px;
+  font-family: inherit;
+}
+
+input::placeholder {
+  color: rgb(134, 148, 146);
+}
+
+/*#form-success input {
+  border-color: rgb(46, 204, 113);
+}
+#form-error input {
+  border-color: rgb(231, 76, 60);
+}*/
+
+#form small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#form-error small {
+  color: rgb(231, 76, 60);
+  visibility: visible;
+}
+
+button {
+  background-color: rgb(0, 128, 105);
+  color: rgb(233, 237, 239);
+  width: 120px;
+  height: 30px;
+  font-family: inherit;
+  font-weight: bold;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+footer {
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgb(32, 44, 51);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+footer > a {
+  color: rgb(233, 237, 239);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.instructions {
+  padding: 20px;
+  background-color: rgb(0, 128, 105);
+  color: rgb(233, 237, 239);
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: rgb(233, 237, 239);
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: rgb(134, 148, 146);
+}

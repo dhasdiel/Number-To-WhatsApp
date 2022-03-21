@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap"
+      rel="stylesheet"
+    />
+    <title>Phone number to chat on WhatsApp</title>
+  </head>
+  <body>
+    <header>
+      <h1>number to whatsapp</h1>
+    </header>
+    <div class="instructions">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      >
+      Welcome 👋 to "number to Whatsapp"<br />
+      Instructions: Step 1 - Choose country dial-code. Step 2 - Enter phone
+      number.<br />
+      Go to chat!
+    </div>
+    <div>
+      <form id="form">
+        <select id="select" name="regions">
+          <option value="">Choose dial-code</option>
+        </select>
+        <input
+          autofocus
+          type="tel"
+          id="input"
+          name="phone"
+          placeholder="Enter phone number"
+        />
+        <br />
+        <button type="submit">Open WhatsApp</button>
+        <br />
+        <small>Error message</small>
+      </form>
+    </div>
+    <footer>
+      <a href="https://linktr.ee/Dhasdiel">HDEV</a>
+    </footer>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
