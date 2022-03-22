@@ -22,7 +22,7 @@ header > h1 {
   text-transform: uppercase;
 }
 
-select,
+datalist,
 input {
   color: rgb(134, 148, 146);
   background-color: rgb(32, 44, 51);
@@ -117,4 +117,12 @@ footer > a {
 
 .closebtn:hover {
   color: rgb(134, 148, 146);
+}
+
+@media only screen and (max-width: 480px) {
+  #form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -1,44 +1,59 @@
-const input = document.getElementById("input");
-const select = document.getElementById("select");
+const inputNum = document.getElementById("input-num");
+const inputCode = document.getElementById("input-code");
+const datalist = document.getElementById("datalist");
 const form = document.getElementById("form");
+const btnCopy = document.getElementById("btn-copy");
+const btnInput = document.getElementById("btn-input");
 const countries = import("./countries.json", {
   assert: {
     type: "json",
   },
 });
+
 countries.then((c) =>
   c.default.forEach((country) => {
     let option = document.createElement("option");
     option.value = country.dialCode;
     option.innerText = country.iso + ": " + country.dialCode;
-    select.appendChild(option);
-    //console.log("🗺️", country.name, country.dialCode);
+    datalist.appendChild(option);
   })
 );
 
-form.addEventListener("submit", (e) => {
+btnInput.addEventListener("click", function (e) {
   e.preventDefault();
   if (checkInput()) {
     document.location =
-      "https://api.whatsapp.com/send?phone=" + select.value + input.value;
+      "https://api.whatsapp.com/send?phone=" + inputCode.value + inputNum.value;
   }
   return false;
 });
 
+btnCopy.addEventListener("click", function () {
+  if (checkInput()) {
+    var copyText =
+      "https://api.whatsapp.com/send?phone=" + inputCode.value + inputNum.value;
+    navigator.clipboard.writeText(copyText.value);
+    alert("Copied the text: " + copyText);
+  }
+});
+
 const checkInput = () => {
-  const inputValue = input.value.trim();
-  const selectValue = select.value.trim();
-  if (selectValue === "") {
-    setErrorFor(input, "dial code cannot be blank.");
+  const inputNumValue = inputNum.value.trim();
+  const inputCodeValue = inputCode.value.trim();
+  if (inputCodeValue === "") {
+    setErrorFor(inputCodeValue, "dial code cannot be blank.");
   }
-  if (inputValue === "") {
-    setErrorFor(input, "input cannot be blank.");
-  } else if (inputValue.length < 8) {
-    setErrorFor(input, "input cannot be less than 8 digits.");
+  if (inputNumValue === "") {
+    setErrorFor(inputNumValue, "input cannot be blank.");
+  } else if (inputNumValue.length < 8) {
+    setErrorFor(inputNumValue, "input cannot be less than 8 digits.");
   }
-  for (let i = 0; i < inputValue.length; i++) {
-    if (inputValue.charAt(i) < "0" || inputValue.charAt(i) > "9") {
-      setErrorFor(input, "input cannot be with diffrent chars then 0-9.");
+  for (let i = 0; i < inputNumValue.length; i++) {
+    if (inputNumValue.charAt(i) < "0" || inputNumValue.charAt(i) > "9") {
+      setErrorFor(
+        inputNumValue,
+        "input cannot be with diffrent chars then 0-9."
+      );
     }
   }
   return true;
@@ -46,7 +61,7 @@ const checkInput = () => {
 
 const setErrorFor = (input, message) => {
   const formControl = input.parentElement;
-  const small = formControl.querySelector("small");
+  const small = formControl.querydatalistor("small");
   small.innerText = message;
   formControl.id = "form-error";
   return false;

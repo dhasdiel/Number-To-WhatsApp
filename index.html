@@ -22,24 +22,29 @@
         >&times;</span
       >
       Welcome 👋 to "number to Whatsapp"<br />
-      Instructions: Step 1 - Choose country dial-code. Step 2 - Enter phone
+      Instructions: Step 1 - Enter country dial-code. Step 2 - Enter phone
       number.<br />
       Go to chat!
     </div>
     <div>
       <form id="form">
-        <select id="select" name="regions">
-          <option value="">Choose dial-code</option>
-        </select>
+        <input
+          list="datalist"
+          name="dial-code"
+          id="input-code"
+          placeholder="Enter dial-code"
+        />
+        <datalist id="datalist"> </datalist>
         <input
           autofocus
           type="tel"
-          id="input"
+          id="input-num"
           name="phone"
           placeholder="Enter phone number"
         />
         <br />
-        <button type="submit">Open WhatsApp</button>
+        <button id="btn-input" type="submit">Open WhatsApp</button>
+        <button id="btn-copy" type="text">Copy URL</button>
         <br />
         <small>Error message</small>
       </form>
