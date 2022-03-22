@@ -32,7 +32,7 @@ btnCopy.addEventListener("click", function () {
   if (checkInput()) {
     var copyText =
       "https://api.whatsapp.com/send?phone=" + inputCode.value + inputNum.value;
-    navigator.clipboard.writeText(copyText.value);
+    navigator.clipboard.writeText(copyText);
     alert("Copied the text: " + copyText);
   }
 });
